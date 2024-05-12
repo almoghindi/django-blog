@@ -1,0 +1,8 @@
+env/ 
+env/ 
+__pycache
+staticfiles
+uploads
+db.sqlite3
+requirements.txt
+django_my_site

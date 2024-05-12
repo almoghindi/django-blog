@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}"/>
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}"/>
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/almog.jpg' %}" alt="Almog - the author"/>
+            <h2>Almog's Blog</h2>
+        </header>
+        <p>My name is Almog and I am the author of this blog.</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>All Posts</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>My name is Almog and I love programming.</p>
+        <p>My goal is to become a full stack developer.</p>
+    </section>
+{% endblock %}
